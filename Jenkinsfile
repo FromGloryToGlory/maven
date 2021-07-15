@@ -19,9 +19,11 @@ pipeline
                         mail bcc: '', body: 'Jenkins was not able to download code from remote repo', cc: '', from: '', replyTo: '', subject: 'Download failed', to: 'gitadmin@gmail.com'
                         exit(1)
                     }
+                    
                 }
 
             }
+            
         }
 
         stage('ContinuousBuild_Master')
@@ -39,9 +41,12 @@ pipeline
                         mail bcc: '', body: 'Jenkinsis unable to create an artifact from code', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'Devteam@gmail.com'
                         exit(1)
                     }
+                    
                 }
 
             }
+            
      }
+        
 }
 
