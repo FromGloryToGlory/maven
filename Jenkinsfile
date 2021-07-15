@@ -22,26 +22,11 @@ pipeline
                 }
 
             }
+
         }
 
-        stage('ContinuousBuild_Master')
-        {
-            steps
-            {
-                script
-                {
-                    try
-                    {
-                        sh 'mvn package'
-                    }
-                    catch(Exception e2)
-                    {
-                        mail bcc: '', body: 'Jenkinsis unable to create an artifact from code', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'Devteam@gmail.com'
-                        exit(1)
-                    }
-                }
+    }
 
-            }
-        }
 }
+
 
